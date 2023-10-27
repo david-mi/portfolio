@@ -1,0 +1,63 @@
+.projectCard {
+  --project-gap: 1rem;
+  padding: var(--project-gap);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "title nav"
+    "tags previewContainer"
+    "description previewContainer";
+  max-width: 1000px;
+  gap: var(--project-gap);
+  background-color: var(--clr-grey);
+  width: 100%;
+
+  & .nav {
+    grid-area: nav;
+    text-align: right;
+    display: flex;
+    gap: var(--project-gap);
+    background-color: black;
+    justify-content: flex-end;
+
+    & .link {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  & .title {
+    grid-area: title;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+
+  & .tags {
+    grid-area: tags;
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--project-gap) / 2);
+
+    & .tag {
+      padding: 5px 10px;
+      border: solid 1px black;
+    }
+  }
+
+  & .description {
+    grid-area: description;
+  }
+
+  & .previewContainer {
+    grid-area: previewContainer;
+    background-color: black;
+    display: grid;
+    place-items: center;
+
+    & .preview {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+    }
+  }
+}
