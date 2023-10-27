@@ -24,7 +24,11 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
+      "@/icons": [
+        "app/components/icons"
+      ],
       "@/*": [
         "./*"
       ]

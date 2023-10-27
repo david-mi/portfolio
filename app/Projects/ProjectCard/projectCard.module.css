@@ -24,6 +24,13 @@
     & .link {
       text-decoration: none;
       color: white;
+      display: flex;
+      align-items: center;
+
+      & .svg {
+        fill: white;
+        height: clamp(25px, 35px - 2vw, 35px);
+      }
     }
   }
 
