@@ -1,5 +1,5 @@
 import styles from "./page.module.css"
-import Projects from "./Projects/Projects"
+import Projects from "./components/Projects/Projects"
 
 function Home() {
   return (

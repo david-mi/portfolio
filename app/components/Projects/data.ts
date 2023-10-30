@@ -1,8 +1,8 @@
 import type { Project } from "./type"
-import cheatSheetPreview from "../../public/projects/cheatsheet_git_github/preview.png"
-import textractPreview from "../../public/projects/textract/preview.png"
-import windatePickerPreview from "../../public/projects/react_windatepicker/preview.png"
-import msnRebornPreview from "../../public/projects/msn_reborn/preview.png"
+import cheatSheetPreview from "@/public/projects/cheatsheet_git_github/preview.png"
+import textractPreview from "@/public/projects/textract/preview.png"
+import windatePickerPreview from "@/public/projects/react_windatepicker/preview.png"
+import msnRebornPreview from "@/public/projects/msn_reborn/preview.png"
 
 export const projectsData: Project[] = [
   {
