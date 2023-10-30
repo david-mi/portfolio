@@ -6,6 +6,7 @@ import msnRebornPreview from "@/public/projects/msn_reborn/preview.png"
 
 export const projectsData: Project[] = [
   {
+    id: "af7c1fe6-d669-414e-b066-e9733f0de7a8",
     name: "MSN Reborn",
     tags: ["React", "TypeScript", "Redux", "Firebase"],
     description: "Application de chat, avec l'interface de MSN Messenger",
@@ -17,6 +18,7 @@ export const projectsData: Project[] = [
     screenshots: []
   },
   {
+    id: "08c71152-c552-42e7-b094-f510ff44e9cb",
     name: "React WindatePicker",
     tags: ["React", "TypeScript"],
     description: "Composant Date picker React avec l'interface de Windows 10",
@@ -28,6 +30,7 @@ export const projectsData: Project[] = [
     screenshots: []
   },
   {
+    id: "c558a80a-f319-4c10-95d4-4282ef745b4b",
     name: "Textract",
     tags: ["TypeScript", "HTML", "CSS"],
     description: "Application d'extraction de texte contenu dans une image. Basé sur l'API Tesseract",
@@ -39,6 +42,7 @@ export const projectsData: Project[] = [
     screenshots: []
   },
   {
+    id: "1ad1fccc-d279-46a0-8980-1d91afd6ba67",
     name: "CheatSheet Git/Gitub",
     tags: ["JavaScript", "HTML", "CSS"],
     description: "Cheat sheet interactive Git/Github",

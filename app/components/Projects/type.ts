@@ -8,6 +8,7 @@ export interface urls {
 }
 
 export interface Project {
+  id: string,
   name: string,
   tags: ProjectTags[],
   description: string

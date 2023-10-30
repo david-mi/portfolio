@@ -9,7 +9,7 @@ function Projects() {
       <h2 className={styles.title}>Projets</h2>
       <div className={styles.projects}>
         {projectsData.map((project) => {
-          return <ProjectCard {...project} />
+          return <ProjectCard key={project.id} {...project} />
         })}
       </div>
     </section>
