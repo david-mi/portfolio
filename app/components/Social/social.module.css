@@ -1,0 +1,45 @@
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) / 4);
+
+  & .link {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 1.7rem;
+    padding: 3px 5px;
+    width: fit-content;
+
+    &:hover {
+      color: white;
+
+      &::before {
+        transform: scaleX(1);
+      }
+
+      & .svg {
+        fill: white;
+        transition: 150ms;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      z-index: -1;
+      background-color: black;
+      transform: scaleX(0);
+      transition: all 250ms ease-in-out;
+      transform-origin: left;
+    }
+
+    & .svg {
+      height: clamp(25px, 35px - 2vw, 35px);
+    }
+  }
+}

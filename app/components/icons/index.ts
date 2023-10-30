@@ -1,2 +1,5 @@
 export { default as GithubIcon } from "./GithubIcon"
 export { default as LiveIcon } from "./LiveIcon"
+export { default as LinkedInIcon } from "./LinkedinIcon"
+export { default as EmailIcon } from "./EmailIcon"
+export { default as YoutubeIcon } from "./YoutubeIcon"
