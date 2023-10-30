@@ -12,10 +12,18 @@ function ProjectCard(props: Project) {
       <header className={styles.header}>
         <h3 className={styles.title}>{name}</h3>
         <nav className={styles.nav}>
-          <Link className={styles.link} href={urls.github}>
+          <Link
+            className={styles.link}
+            href={urls.github}
+            target="_blank"
+          >
             <GithubIcon className={styles.svg} />
           </Link>
-          <Link className={styles.link} href={urls.live}>
+          <Link
+            className={styles.link}
+            href={urls.live}
+            target="_blank"
+          >
             <LiveIcon className={styles.svg} />
           </Link>
         </nav>
