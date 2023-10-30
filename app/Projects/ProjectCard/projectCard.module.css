@@ -5,38 +5,57 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto 1fr;
   grid-template-areas:
-    "title nav"
+    "header header"
     "tags previewContainer"
     "description previewContainer";
-  max-width: 1000px;
   gap: var(--project-gap);
   background-color: var(--clr-grey);
   width: 100%;
 
-  & .nav {
-    grid-area: nav;
-    text-align: right;
+  @media (width < 650px) {
     display: flex;
-    gap: var(--project-gap);
-    background-color: black;
-    justify-content: flex-end;
-
-    & .link {
-      text-decoration: none;
-      color: white;
-      display: flex;
-      align-items: center;
-
-      & .svg {
-        fill: white;
-        height: clamp(25px, 35px - 2vw, 35px);
-      }
-    }
+    flex-direction: column;
   }
 
-  & .title {
-    grid-area: title;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  & .header {
+    grid-area: header;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    margin: calc(var(--project-gap) * -1);
+    margin-bottom: 0;
+    padding: calc(var(--project-gap) / 1.5);
+
+    & .nav {
+      text-align: right;
+      display: flex;
+      gap: var(--project-gap);
+      justify-content: flex-end;
+
+      & .link {
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+
+        & .svg {
+          fill: white;
+          height: clamp(25px, 35px - 2vw, 35px);
+        }
+      }
+    }
+
+    & .title {
+      grid-area: title;
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      white-space: nowrap;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: white;
+    }
   }
 
   & .tags {
@@ -44,20 +63,25 @@
     display: flex;
     flex-wrap: wrap;
     gap: calc(var(--project-gap) / 2);
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
 
     & .tag {
-      padding: 5px 10px;
+      padding: 3px 7px;
       border: solid 1px black;
     }
   }
 
   & .description {
     grid-area: description;
+    background-color: rgba(223, 223, 223, 0.24);
+    display: grid;
+    place-items: center;
+    padding: calc(var(--project-gap) / 2);
   }
 
   & .previewContainer {
     grid-area: previewContainer;
-    background-color: black;
+    /* background-color: black; */
     display: grid;
     place-items: center;
 

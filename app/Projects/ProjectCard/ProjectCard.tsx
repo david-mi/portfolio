@@ -9,21 +9,24 @@ function ProjectCard(props: Project) {
 
   return (
     <article className={styles.projectCard}>
-      <nav className={styles.nav}>
-        <Link className={styles.link} href={urls.github}>
-          <GithubIcon className={styles.svg} />
-        </Link>
-        <Link className={styles.link} href={urls.live}>
-          <LiveIcon className={styles.svg} />
-        </Link>
-      </nav>
-      <h3 className={styles.title}>{name}</h3>
+      <header className={styles.header}>
+        <h3 className={styles.title}>{name}</h3>
+        <nav className={styles.nav}>
+          <Link className={styles.link} href={urls.github}>
+            <GithubIcon className={styles.svg} />
+          </Link>
+          <Link className={styles.link} href={urls.live}>
+            <LiveIcon className={styles.svg} />
+          </Link>
+        </nav>
+      </header>
       <div className={styles.tags}>
         {tags.map((tag) => <span key={tag} className={styles.tag}>{tag}</span>)}
       </div>
       <p className={styles.description}>{description}</p>
       <div className={styles.previewContainer}>
         <Image
+          placeholder={"blur"}
           src={previewSrc}
           alt="image de prévisualisation"
           className={styles.preview}
