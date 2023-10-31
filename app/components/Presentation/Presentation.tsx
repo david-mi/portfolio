@@ -19,16 +19,27 @@ function Presentation() {
         src={picture}
         alt="photo de david michel"
         className={styles.picture}
+        priority
       />
       <p className={styles.description}>
         Fraîchement diplômé d'une formation de
         Développeur Web
-        <Link href="https://openclassrooms.com/fr/paths/717-developpeur-web" target="_blank">
+        <Link
+          href="https://openclassrooms.com/fr/paths/717-developpeur-web"
+          target="_blank"
+          aria-label="Visiter la page de formation Développeur Web"
+          title="Visiter la page de formation Développeur Web"
+        >
           <ExternalLink className={styles.svg} />
         </Link>
         puis une seconde de
         Développeur d'application JavaScript React
-        <Link href="https://openclassrooms.com/fr/paths/877-developpeur-dapplication-javascript-react" target="_blank">
+        <Link
+          href="https://openclassrooms.com/fr/paths/877-developpeur-dapplication-javascript-react"
+          target="_blank"
+          aria-label="Visiter la page de formation Développeur d'application JavaScript React"
+          title="Visiter la page de formation Développeur d'application JavaScript React"
+        >
           <ExternalLink className={styles.svg} />
         </Link>
         Je souhaite maintenant trouver une entreprise pour collaborer.

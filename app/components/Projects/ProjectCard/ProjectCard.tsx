@@ -16,6 +16,8 @@ function ProjectCard(props: Project) {
             className={styles.link}
             href={urls.github}
             target="_blank"
+            aria-label="Visiter le dépôt Github du projet"
+            title="Visiter le dépôt Github du projet"
           >
             <GithubIcon className={styles.svg} />
           </Link>
@@ -23,6 +25,8 @@ function ProjectCard(props: Project) {
             className={styles.link}
             href={urls.live}
             target="_blank"
+            aria-label="Visiter l'application"
+            title="Visiter l'application"
           >
             <LiveIcon className={styles.svg} />
           </Link>
