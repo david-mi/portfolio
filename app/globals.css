@@ -11,7 +11,8 @@
 
 body {
   font-family: var(--font-inter);
-  padding: clamp(5px, 1vw, 20px);
+  padding-inline: clamp(5px, 2vw, 2rem);
+  padding-block: 2rem;
 }
 
 h1,
@@ -24,11 +25,12 @@ h5 {
 
 h3 {
   font-weight: 700;
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: calc(var(--gap) / 1.5);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: calc(var(--gap) * 1.5);
+  text-align: center;
 
   @media (width < 650px) {
-    margin-bottom: calc(var(--gap) / 2);
+    margin-bottom: var(--gap);
   }
 }
 
@@ -37,4 +39,12 @@ main {
   min-height: 100dvh;
   max-width: 1200px;
   margin-inline: auto;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
