@@ -5,12 +5,19 @@
     justify-content: space-between;
     gap: var(--gap);
 
+    @media (width < 650px) {
+      display: flex;
+      margin-inline: auto;
+      flex-direction: column;
+      max-width: 450px;
+    }
   }
 
   & section {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
+    flex: 1;
 
     & h4 {
       font-weight: 600;
@@ -18,7 +25,7 @@
       color: white;
       text-align: center;
       padding: 0.5rem 1rem;
-      font-size: clamp(1.8rem, 2.2vw, 2rem);
+      font-size: clamp(1.3rem, 1.8vw, 2rem);
     }
 
     & .skillsList {
@@ -28,6 +35,20 @@
       list-style: none;
       font-size: clamp(1.4rem, 2.2vw, 1.7rem);
       columns: 2;
+      padding-inline: 0.5rem;
+      width: fit-content;
+      align-self: center;
+
+      & li {
+        display: flex;
+        gap: calc(var(--gap) / 2);
+        align-items: center;
+
+        & .svg {
+          height: clamp(25px, 35px - 2vw, 35px);
+        }
+      }
+
     }
   }
 }
