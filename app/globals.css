@@ -22,7 +22,7 @@ h5 {
   font-family: var(--font-poppins);
 }
 
-h2 {
+h3 {
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: calc(var(--gap) / 1.5);

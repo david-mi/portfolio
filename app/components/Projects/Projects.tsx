@@ -6,7 +6,7 @@ import styles from "./projects.module.css"
 function Projects() {
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>Projets</h2>
+      <h3 className={styles.title}>Projets</h3>
       <div className={styles.projects}>
         {projectsData.map((project) => {
           return <ProjectCard key={project.id} {...project} />

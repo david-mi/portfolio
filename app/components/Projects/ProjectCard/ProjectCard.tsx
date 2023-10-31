@@ -10,7 +10,7 @@ function ProjectCard(props: Project) {
   return (
     <article className={styles.projectCard}>
       <header className={styles.header}>
-        <h3 className={styles.title}>{name}</h3>
+        <h4 className={styles.title}>{name}</h4>
         <nav className={styles.nav}>
           <Link
             className={styles.link}

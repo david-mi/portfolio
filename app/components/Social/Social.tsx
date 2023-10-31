@@ -5,7 +5,7 @@ import { YoutubeIcon, LinkedInIcon, GithubIcon, EmailIcon } from "@/icons"
 function Social() {
   return (
     <footer className={styles.social}>
-      <h2>Social</h2>
+      <h3>Social</h3>
 
       <Link
         className={styles.link}
