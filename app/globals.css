@@ -30,11 +30,6 @@ h2 {
   @media (width < 650px) {
     margin-bottom: calc(var(--gap) / 2);
   }
-
-}
-
-h1 {
-  font-weight: 700;
 }
 
 html,
