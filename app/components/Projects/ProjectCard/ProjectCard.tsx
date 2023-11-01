@@ -2,7 +2,7 @@ import type { Project } from "../type";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./projectCard.module.css";
-import { GithubIcon, LiveIcon } from "@/icons";
+import { GithubIcon, LiveIcon, GalleryIcon } from "@/icons";
 
 function ProjectCard(props: Project) {
   const { name, description, previewSrc, tags, urls } = props
@@ -12,6 +12,9 @@ function ProjectCard(props: Project) {
       <header className={styles.header}>
         <h4 className={styles.title}>{name}</h4>
         <nav className={styles.nav}>
+          <button className={styles.button}>
+            <GalleryIcon className={styles.svg} />
+          </button>
           <Link
             className={styles.link}
             href={urls.github}
