@@ -1,5 +1,6 @@
 "use client"
 
+import styles from "./galleryButton.module.css"
 import { GalleryIcon } from "@/icons";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 
 function GalleryButton({ onClick }: Props) {
   return (
-    <button onClick={onClick}>
+    <button className={styles.galleryButton} onClick={onClick}>
       <GalleryIcon />
     </button>
   );

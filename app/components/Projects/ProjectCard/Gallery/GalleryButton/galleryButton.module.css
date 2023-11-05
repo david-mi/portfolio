@@ -1,0 +1,12 @@
+.galleryButton {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 1px;
+
+  & svg {
+    fill: white;
+    color: white;
+    height: clamp(25px, 35px - 2vw, 35px);
+  }
+}
