@@ -27,6 +27,7 @@
     margin: calc(var(--project-gap) * -1);
     margin-bottom: 0;
     padding: calc(var(--project-gap) / 1.5);
+    gap: calc(var(--project-gap) / 2) var(--project-gap);
 
     & .nav {
       text-align: right;

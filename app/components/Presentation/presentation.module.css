@@ -1,7 +1,6 @@
 .presentation {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* justify-items: center; */
   grid-template-rows: auto auto 1fr;
   row-gap: calc(var(--gap) / 2);
   column-gap: 2rem;
@@ -11,22 +10,30 @@
     "description picture";
 
   @media (width < 650px) {
+    max-width: 450px;
+    margin-inline: auto;
     display: flex;
     flex-direction: column;
     gap: calc(var(--gap) / 2);
-    align-items: center;
   }
 
   & .name {
+
+    & span::first-letter {
+      font-size: clamp(3.4rem, 8vw, 7rem);
+      font-weight: 700;
+
+      @media (width < 650px) {
+        font-weight: 600;
+      }
+    }
+
     grid-area: name;
     display: flex;
-    /* justify-self: center; */
-    /* flex-direction: column; */
     gap: calc(var(--gap) / 2);
     align-items: flex-start;
-    font-weight: 700;
-    font-size: clamp(2.5rem, 5vw, 5rem);
-    /* line-height: 1.2em; */
+    font-weight: 500;
+    font-size: clamp(2.5rem, 7vw, 5rem);
   }
 
   & .job {
@@ -47,9 +54,9 @@
       font-weight: 800;
     }
 
-
     @media (width < 650px) {
-      flex-direction: row;
+      flex-direction: column;
+      align-items: end;
       gap: 0.5rem;
     }
   }
@@ -92,5 +99,12 @@
     object-position: 40% 70%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     justify-self: center;
+
+    @media (width < 650px) {
+      max-width: none;
+      max-height: none;
+      width: 100%;
+      height: auto;
+    }
   }
 }
