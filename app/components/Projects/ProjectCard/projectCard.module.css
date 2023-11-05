@@ -42,7 +42,7 @@
         align-items: center;
       }
 
-      & button {
+      & .button {
         position: relative;
         top: 1px;
         cursor: pointer;
@@ -52,7 +52,7 @@
         align-items: center;
       }
 
-      & svg {
+      & .svg {
         fill: white;
         color: white;
         height: clamp(25px, 35px - 2vw, 35px);
