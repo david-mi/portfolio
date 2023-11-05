@@ -1,0 +1,32 @@
+.layout {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  padding: var(--padding-global);
+  background-color: white;
+  padding-bottom: var(--modale-gap);
+  padding-inline: var(--modale-inline-padding);
+  gap: var(--modale-gap);
+
+  & header {
+    background-color: white;
+    width: 100%;
+    user-select: none;
+    border-bottom: solid 1px var(--separators-clr);
+    padding: 5px;
+    margin-bottom: auto;
+
+    & .closeButton {
+      margin-left: auto;
+    }
+  }
+
+  & svg {
+    fill: black;
+    color: black;
+    height: clamp(30px, 40px - 2vw, 40px);
+  }
+}
