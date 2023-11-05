@@ -51,15 +51,24 @@ function Gallery({ screenshots }: Props) {
                     alt="screen"
                     placeholder="blur"
                     loading="eager"
-                    style={{ width: "auto", height: "auto", padding: "5px" }}
                   />
                 </div>
               )
             })}
           </div>
+          <button onClick={scrollPrev} className={styles.previous}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" fillRule="evenodd" d="M3.464 20.535C4.93 22 7.286 22 12 22c4.714 0 7.071 0 8.535-1.465C22 19.072 22 16.714 22 12s0-7.071-1.465-8.536C19.072 2 16.714 2 12 2S4.929 2 3.464 3.464C2 4.93 2 7.286 2 12c0 4.714 0 7.071 1.464 8.535ZM9.97 15.53a.75.75 0 0 1 0-1.06L12.44 12L9.97 9.53a.75.75 0 0 1 1.06-1.06l3 3a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 0 1-1.06 0Z" clipRule="evenodd">
+              </path>
+            </svg>
+          </button>
+          <button onClick={scrollNext} className={styles.next}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" fillRule="evenodd" d="M3.464 20.535C4.93 22 7.286 22 12 22c4.714 0 7.071 0 8.535-1.465C22 19.072 22 16.714 22 12s0-7.071-1.465-8.536C19.072 2 16.714 2 12 2S4.929 2 3.464 3.464C2 4.93 2 7.286 2 12c0 4.714 0 7.071 1.464 8.535ZM9.97 15.53a.75.75 0 0 1 0-1.06L12.44 12L9.97 9.53a.75.75 0 0 1 1.06-1.06l3 3a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 0 1-1.06 0Z" clipRule="evenodd">
+              </path>
+            </svg>
+          </button>
         </div>
-        <button onClick={scrollPrev} className="embla__prev">Prev</button>
-        <button onClick={scrollNext} className="embla__next">Next</button>
       </ModaleLayout >
     )
     : <GalleryButton onClick={() => setDisplayGallery(true)} />;

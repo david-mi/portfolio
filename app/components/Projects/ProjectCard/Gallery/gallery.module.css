@@ -1,9 +1,15 @@
 .embla {
   overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .container {
   display: flex;
+  flex: 1;
+  max-height: 100%;
 }
 
 .slide {
@@ -11,11 +17,52 @@
   min-width: 0;
   display: grid;
   place-items: center;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img {
-  width: auto;
+  display: block;
+  object-fit: contain;
   max-width: 100%;
-  height: auto;
-  padding: 5%;
+  max-height: 100%;
+  padding: 5px;
+}
+
+.next,
+.previous {
+  position: absolute;
+  top: 50%;
+  margin: 0.5rem;
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 1rem;
+    background-color: white;
+    z-index: -1;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    inset: -1px;
+    background-color: white;
+    z-index: -1;
+    border: solid 5px white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(190, 190, 190);
+  }
+}
+
+.next {
+  right: 0px;
+  transform: translateY(-50%);
+}
+
+.previous {
+  left: 0px;
+  transform: translateY(-50%) rotate(180deg);
 }
