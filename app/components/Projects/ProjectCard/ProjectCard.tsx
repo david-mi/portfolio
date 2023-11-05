@@ -1,20 +1,19 @@
 import type { Project } from "../type";
+import Gallery from "./Gallery/Gallery";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./projectCard.module.css";
-import { GithubIcon, LiveIcon, GalleryIcon } from "@/icons";
+import { GithubIcon, LiveIcon } from "@/icons";
 
 function ProjectCard(props: Project) {
-  const { name, description, previewSrc, tags, urls } = props
+  const { name, description, previewSrc, tags, urls, screenshots } = props
 
   return (
     <article className={styles.projectCard}>
       <header className={styles.header}>
         <h4 className={styles.title}>{name}</h4>
         <nav className={styles.nav}>
-          <button className={styles.button}>
-            <GalleryIcon className={styles.svg} />
-          </button>
+          <Gallery screenshots={screenshots} />
           <Link
             className={styles.link}
             href={urls.github}

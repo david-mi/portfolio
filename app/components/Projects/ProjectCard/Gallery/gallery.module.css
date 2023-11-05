@@ -1,0 +1,21 @@
+.embla {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  display: grid;
+  place-items: center;
+}
+
+.img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  padding: 5%;
+}
