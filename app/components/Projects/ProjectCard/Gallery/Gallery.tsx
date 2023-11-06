@@ -49,8 +49,6 @@ function Gallery({ screenshots }: Props) {
                     className={styles.img}
                     src={screenshot}
                     alt="screen"
-                    placeholder="blur"
-                    loading="eager"
                   />
                 </div>
               )
