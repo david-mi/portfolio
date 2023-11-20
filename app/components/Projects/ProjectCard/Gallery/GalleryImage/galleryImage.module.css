@@ -1,0 +1,20 @@
+.galleryImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 70dvh;
+}
+
+.img {
+  filter: blur(20px);
+  transition: 500ms;
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+  max-height: 70dvh;
+
+  &.loaded {
+    filter: blur(0);
+  }
+}

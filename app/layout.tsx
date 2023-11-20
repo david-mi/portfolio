@@ -18,8 +18,9 @@ const poppins = Poppins({
 const classNames = `${inter.variable} ${poppins.variable}`
 
 export const metadata: Metadata = {
-  title: "David Michel",
+  title: "David Michel, développeur Front End",
   description: "David Michel, développeur Front End",
+
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
