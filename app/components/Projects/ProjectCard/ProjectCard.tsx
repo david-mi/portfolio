@@ -13,13 +13,13 @@ function ProjectCard(props: Project) {
       <header className={styles.header}>
         <h4 className={styles.title}>{name}</h4>
         <nav className={styles.nav}>
-          <Gallery screenshots={screenshots} />
+          <Gallery screenshots={screenshots} name={name} />
           <Link
             className={styles.link}
             href={urls.github}
             target="_blank"
-            aria-label="Visiter le dépôt Github du projet"
-            title="Visiter le dépôt Github du projet"
+            aria-label={`Visiter le dépôt Github de ${name}`}
+            title={`Visiter le dépôt Github de ${name}`}
           >
             <GithubIcon className={styles.svg} />
           </Link>
@@ -27,8 +27,8 @@ function ProjectCard(props: Project) {
             className={styles.link}
             href={urls.live}
             target="_blank"
-            aria-label="Visiter l'application"
-            title="Visiter l'application"
+            aria-label={`Visiter l'application ${name}`}
+            title={`Visiter l'application ${name}`}
           >
             <LiveIcon className={styles.svg} />
           </Link>
@@ -42,7 +42,7 @@ function ProjectCard(props: Project) {
         <Image
           placeholder={"blur"}
           src={previewSrc}
-          alt="image de prévisualisation"
+          alt={`Image de prévisualisation de ${name}`}
           className={styles.preview}
         />
       </div>

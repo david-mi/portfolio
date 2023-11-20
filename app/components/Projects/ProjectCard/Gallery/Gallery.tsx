@@ -12,9 +12,10 @@ import ArrowButton from "./ArrowButton/ArrowButton";
 
 interface Props {
   screenshots: StaticImageData[]
+  name: string
 }
 
-function Gallery({ screenshots }: Props) {
+function Gallery({ screenshots, name }: Props) {
   const [displayGallery, setDisplayGallery] = useState(false)
 
   useEffect(() => {
@@ -46,7 +47,7 @@ function Gallery({ screenshots }: Props) {
         </Slider>
       </ModaleLayout >
     )
-    : <GalleryButton onClick={() => setDisplayGallery(true)} />;
+    : <GalleryButton name={name} onClick={() => setDisplayGallery(true)} />;
 }
 
 export default Gallery;

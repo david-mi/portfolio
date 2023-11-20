@@ -32,10 +32,10 @@ function Social() {
           href="mailto:david.michel2809@gmail.com"
           className={styles.link}
           aria-label="M'envoyer un email"
-          title="M'envoyer un email"
+          title="Me contacter par email"
         >
           <EmailIcon className={styles.svg} />
-          <p>david.michel2809@gmail.com</p>
+          <p>Email</p>
         </Link>
         <Link
           href="https://www.youtube.com/@david-mi"
