@@ -76,9 +76,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "1ad1fccc-d279-46a0-8980-1d91afd6ba67",
-    name: "CheatSheet Git/Gitub",
+    name: "CheatSheet Git",
     tags: ["JavaScript", "HTML", "CSS"],
-    description: "Cheat sheet interactive Git/Github",
+    description: "Cheat sheet interactive pour Git",
     urls: {
       live: "https://david-mi.github.io/cheatsheet_git",
       github: "https://github.com/david-mi/cheatsheet_git"
