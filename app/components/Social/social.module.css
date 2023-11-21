@@ -9,7 +9,7 @@
     grid-template-columns: auto auto;
     justify-items: flex-start;
     justify-content: center;
-    gap: calc(var(--gap) / 4);
+    gap: calc(var(--gap) / 2) var(--gap);
 
     @media (width < 650px) {
       display: flex;
@@ -25,7 +25,6 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    height: 1.7rem;
     padding: 3px 5px;
     width: fit-content;
 
