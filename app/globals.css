@@ -48,3 +48,36 @@ button {
   display: flex;
   align-items: center;
 }
+
+button,
+a:not(footer a) {
+  position: relative;
+  padding: 3px;
+
+  & svg {
+    z-index: 1;
+    transition: 300ms;
+  }
+
+  &:hover::before {
+    transform: scale(1);
+    border-radius: 50%;
+    opacity: 1;
+  }
+
+  &:hover svg {
+    fill: black !important;
+    color: black !important
+  }
+
+  &::before {
+    z-index: 0;
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-color: white;
+    transition: 250ms ease-in-out;
+    transform: scale(0);
+    opacity: 0;
+  }
+}
