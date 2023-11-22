@@ -6,7 +6,7 @@ import ExternalLink from "../icons/ExternalLink";
 
 function Presentation() {
   return (
-    <header className={styles.presentation}>
+    <section className={styles.presentation}>
       <h1 className={styles.name}>
         <span>David</span>
         <span>Michel</span>
@@ -52,7 +52,7 @@ function Presentation() {
         </ul>
         Je souhaite maintenant trouver une entreprise pour collaborer.
       </article>
-    </header>
+    </section>
   );
 }
 
