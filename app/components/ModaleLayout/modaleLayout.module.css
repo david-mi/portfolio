@@ -25,6 +25,19 @@
     margin-block: auto;
   }
 
+  button {
+    &:hover {
+      &::before {
+        background-color: black;
+      }
+
+      & svg {
+        fill: white !important;
+        color: white !important;
+      }
+    }
+  }
+
   & svg {
     fill: black;
     color: black;

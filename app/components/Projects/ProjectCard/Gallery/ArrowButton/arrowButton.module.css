@@ -1,35 +1,16 @@
 .button {
-  position: absolute;
+  position: absolute !important;
   top: 50%;
   margin: 0.5rem;
   z-index: 99;
-
-  &::before {
-    position: absolute;
-    content: "";
-    inset: 1rem;
-    background-color: white;
-    z-index: -1;
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    inset: -1px;
-    background-color: white;
-    z-index: -1;
-    border: solid 5px white;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgb(190, 190, 190);
-  }
 }
 
 .next {
   right: 0px;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .previous {
   left: 0px;
-  transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%);
 }
