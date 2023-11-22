@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from "./modaleLayout.module.css"
 
 export interface Props {
@@ -11,6 +11,20 @@ function ModaleLayout({
   onCloseButtonClick,
 }: Props) {
   const [closedModale, setClosedModale] = useState(false)
+
+  useEffect(() => {
+    const focusableElementsOutsideModale = document.querySelectorAll(`button:not(.${styles.layout} button), a, select`);
+
+    if (closedModale) {
+      focusableElementsOutsideModale.forEach((focusableElement) => {
+        focusableElement.setAttribute("tabIndex", "0")
+      })
+    } else {
+      focusableElementsOutsideModale.forEach((focusableElement) => {
+        focusableElement.setAttribute("tabIndex", "-1")
+      })
+    }
+  }, [closedModale])
 
   if (closedModale) {
     return null
