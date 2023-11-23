@@ -13,12 +13,12 @@ import {
 }
   from "@/icons"
 import styles from "./skills.module.css";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 function Skills() {
   return (
     <section className={styles.skills}>
-      <h3 className={styles.title}>Compétences</h3>
-
+      <SectionTitle title="Compétences" />
       <div>
         <section>
           <h4>Front End</h4>

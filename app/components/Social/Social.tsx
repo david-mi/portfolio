@@ -1,11 +1,12 @@
 import Link from "next/link";
 import styles from "./social.module.css";
 import { YoutubeIcon, LinkedInIcon, GithubIcon, EmailIcon } from "@/icons"
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 function Social() {
   return (
     <footer className={styles.social}>
-      <h3>Social</h3>
+      <SectionTitle title="Social" />
 
       <div className={styles.links}>
         <Link

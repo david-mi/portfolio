@@ -1,0 +1,27 @@
+@keyframes up {
+  from {
+    transform: translateY(5rem);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.sectionTitle {
+  position: relative;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: calc(var(--gap) * 1.5);
+  text-align: center;
+  overflow: hidden;
+
+  @media (width < 650px) {
+    margin-bottom: var(--gap);
+  }
+
+  & span {
+    display: block;
+    animation: 500ms up forwards ease-out;
+  }
+}
