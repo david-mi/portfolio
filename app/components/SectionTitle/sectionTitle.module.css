@@ -23,5 +23,10 @@
   & span {
     display: block;
     animation: 500ms up forwards ease-out;
+
+    &::first-letter {
+      font-size: clamp(3.3rem, 6vw, 5rem);
+      font-weight: 800;
+    }
   }
 }
