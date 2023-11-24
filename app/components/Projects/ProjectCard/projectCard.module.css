@@ -1,3 +1,33 @@
+@keyframes displayProjectCard {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes displayProjectName {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes displayProjectNav {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes displayPreview {
+  50% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+}
+
 .projectCard {
   --project-gap: 1rem;
   padding: var(--project-gap);
@@ -11,10 +41,37 @@
   gap: var(--project-gap);
   background-color: var(--clr-grey);
   width: 100%;
+  transform: scale(0.7);
 
   @media (width < 650px) {
     display: flex;
     flex-direction: column;
+  }
+
+  &.show {
+    animation: displayProjectCard 400ms forwards;
+
+    & .header {
+      & h4 {
+        animation: displayProjectName 400ms 200ms forwards cubic-bezier(.17, .67, .37, 1.14);
+      }
+
+      & .nav {
+        animation: displayProjectNav 400ms 200ms forwards cubic-bezier(.17, .67, .37, 1.14);
+      }
+    }
+
+    & .tags {
+      animation: displayPreview 500ms 200ms linear forwards;
+    }
+
+    & .description {
+      animation: displayPreview 500ms 300ms linear forwards;
+    }
+
+    & .previewContainer {
+      animation: displayPreview 500ms 400ms linear forwards;
+    }
   }
 
   & .header {
@@ -28,6 +85,7 @@
     margin-bottom: 0;
     padding: calc(var(--project-gap) / 1.5);
     gap: calc(var(--project-gap) / 2) var(--project-gap);
+    overflow-y: hidden;
 
     & .nav {
       text-align: right;
@@ -35,6 +93,7 @@
       gap: var(--project-gap);
       justify-content: flex-end;
       align-items: center;
+      transform: translateY(200%);
 
       & .link {
         text-decoration: none;
@@ -73,7 +132,13 @@
       overflow: hidden;
       text-overflow: ellipsis;
       color: white;
+      transform: translateY(-200%);
     }
+  }
+
+  & :is(.tags, .description, .previewContainer) {
+    filter: grayscale(1);
+    opacity: 0;
   }
 
   & .tags {
@@ -98,9 +163,9 @@
   }
 
   & .previewContainer {
-    grid-area: previewContainer;
     display: grid;
     place-items: center;
+    grid-area: previewContainer;
 
     & .preview {
       width: 200px;

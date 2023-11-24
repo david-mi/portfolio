@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect, useRef } from "react";
 import type { Project } from "../type";
 import Gallery from "./Gallery/Gallery";
 import Image from "next/image";
@@ -7,9 +10,21 @@ import { GithubIcon, LiveIcon } from "@/icons";
 
 function ProjectCard(props: Project) {
   const { name, description, previewSrc, tags, urls, screenshots } = props
+  const projectCardRef = useRef<HTMLElement>(null!)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return
+
+      projectCardRef.current.classList.add(styles.show)
+      observer.unobserve(projectCardRef.current)
+    }, { threshold: 0.3 })
+
+    observer.observe(projectCardRef.current)
+  }, [])
 
   return (
-    <article className={styles.projectCard}>
+    <article className={styles.projectCard} ref={projectCardRef}>
       <header className={styles.header}>
         <h4 className={styles.title}>{name}</h4>
         <nav className={styles.nav}>
