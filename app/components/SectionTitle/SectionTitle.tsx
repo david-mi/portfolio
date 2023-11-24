@@ -19,7 +19,7 @@ function SectionTitle({ title }: Props) {
 
       titleElementRef.current.classList.add(styles.show)
       observer.unobserve(titleElementRef.current)
-    })
+    }, { threshold: 0.3 })
 
     observer.observe(titleElementRef.current)
   }, [])
