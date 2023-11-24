@@ -1,10 +1,12 @@
-@keyframes up {
-  from {
-    transform: translateY(5rem);
-  }
-
+@keyframes displayTitle {
   to {
     transform: translateY(0);
+  }
+}
+
+@keyframes displayLine {
+  to {
+    transform: scaleX(1);
   }
 }
 
@@ -15,18 +17,35 @@
   margin-bottom: calc(var(--gap) * 1.5);
   text-align: center;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (width < 650px) {
     margin-bottom: var(--gap);
   }
 
-  & span {
-    display: block;
-    animation: 500ms up forwards ease-out;
+  &.show span {
+    animation: displayTitle 400ms forwards cubic-bezier(.17, .67, .37, 1.14);
+  }
 
-    &::first-letter {
-      font-size: clamp(3.3rem, 6vw, 5rem);
-      font-weight: 800;
+  & span:nth-child(1) {
+    font-size: clamp(3.3rem, 6vw, 5rem);
+    font-weight: 800;
+    transform: translateY(-200%);
+  }
+
+  & span:nth-child(2) {
+    transform: translateY(200%);
+    position: relative;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      border-bottom: solid 3px black;
+      transform-origin: left;
+      transform: scaleX(0)
     }
   }
 }
