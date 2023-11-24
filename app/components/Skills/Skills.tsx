@@ -14,40 +14,30 @@ import {
   from "@/icons"
 import styles from "./skills.module.css";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import Category from "./Category/Category";
 
 function Skills() {
   return (
     <section className={styles.skills}>
       <SectionTitle title="Compétences" />
-      <div>
-        <section>
-          <h4>Front End</h4>
-          <ul className={styles.skillsList}>
-            <li><NextJsIcon className={styles.svg} />NextJs</li>
-            <li><ReduxIcon className={styles.svg} />Redux</li>
-            <li><ReactIcon className={styles.svg} />React</li>
-            <li><TypescriptIcon className={styles.svg} />TypeScript</li>
-          </ul>
-        </section>
-
-        <section>
-          <h4>Back End</h4>
-          <ul className={styles.skillsList}>
-            <li><ExpressJsIcon className={styles.svg} />ExpressJs</li>
-            <li><MongoDbIcon className={styles.svg} /> MongoDB</li>
-            <li><MysqlIcon className={styles.svg} /> MySQL</li>
-          </ul>
-        </section>
-
-        <section>
-          <h4>Divers</h4>
-          <ul className={styles.skillsList}>
-            <li><GitIcon className={styles.svg} />Git</li>
-            <li><GithubIcon className={styles.svg} />Github</li>
-            <li><FirebaseIcon className={styles.svg} />Firebase</li>
-            <li><FigmaIcon className={styles.svg} />Figma</li>
-          </ul>
-        </section>
+      <div className={styles.sections}>
+        <Category title="Front End">
+          <li><NextJsIcon />NextJs</li>
+          <li><ReduxIcon />Redux</li>
+          <li><ReactIcon />React</li>
+          <li><TypescriptIcon />TypeScript</li>
+        </Category>
+        <Category title="Back End">
+          <li><ExpressJsIcon />ExpressJs</li>
+          <li><MongoDbIcon /> MongoDB</li>
+          <li><MysqlIcon /> MySQL</li>
+        </Category>
+        <Category title="Divers">
+          <li><GitIcon />Git</li>
+          <li><GithubIcon />Github</li>
+          <li><FirebaseIcon />Firebase</li>
+          <li><FigmaIcon />Figma</li>
+        </Category>
       </div>
     </section>
   );

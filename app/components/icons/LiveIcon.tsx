@@ -1,6 +1,6 @@
 
 interface Props {
-  className: string
+  className?: string
 }
 
 function LiveIcon({ className }: Props) {

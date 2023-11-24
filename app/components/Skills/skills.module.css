@@ -1,5 +1,5 @@
 .skills {
-  & div {
+  & .sections {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -10,45 +10,6 @@
       margin-inline: auto;
       flex-direction: column;
       max-width: 450px;
-    }
-  }
-
-  & section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap);
-    flex: 1;
-
-    & h4 {
-      font-weight: 600;
-      background-color: black;
-      color: white;
-      text-align: center;
-      padding: 0.5rem 1rem;
-      font-size: clamp(1.3rem, 1.8vw, 2rem);
-    }
-
-    & .skillsList {
-      display: flex;
-      flex-direction: column;
-      gap: calc(var(--gap) / 2);
-      list-style: none;
-      font-size: clamp(1.4rem, 2.2vw, 1.7rem);
-      columns: 2;
-      padding-inline: 0.5rem;
-      width: fit-content;
-      align-self: center;
-
-      & li {
-        display: flex;
-        gap: calc(var(--gap) / 2);
-        align-items: center;
-
-        & .svg {
-          height: clamp(25px, 35px - 2vw, 35px);
-        }
-      }
-
     }
   }
 }
