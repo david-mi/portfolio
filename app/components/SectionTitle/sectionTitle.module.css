@@ -14,7 +14,7 @@
   position: relative;
   font-weight: 700;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
-  margin-bottom: calc(var(--gap) * 1.5);
+  margin-bottom: calc(var(--gap) * 2);
   text-align: center;
   overflow: hidden;
   display: flex;
@@ -22,7 +22,7 @@
   align-items: center;
 
   @media (width < 650px) {
-    margin-bottom: var(--gap);
+    margin-bottom: calc(var(--gap) * 1.5);
   }
 
   &.show span {
