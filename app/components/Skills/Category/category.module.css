@@ -1,8 +1,30 @@
+@keyframes displayCategory {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes roll {
+  to {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
 .category {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
   flex: 1;
+  transform: scale(0.7);
+
+  &.show {
+    animation: displayCategory 400ms forwards;
+
+    & .skillsList svg {
+      animation: roll 600ms 200ms cubic-bezier(.17, .67, .52, 1.27) forwards;
+    }
+  }
 
   & h4 {
     font-weight: 600;
@@ -31,8 +53,9 @@
 
       & svg {
         height: clamp(25px, 35px - 2vw, 35px);
+        transform: translateX(-100%) rotate(-450deg);
+        opacity: 0;
       }
     }
-
   }
 }
