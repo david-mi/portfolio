@@ -38,7 +38,7 @@ function ModaleLayout({
     }
   }
 
-  const layoutContent = (
+  return (
     <div className={styles.layout}>
       <header>
         <button className={styles.closeButton} type="button" onClick={closeModale}>
@@ -49,12 +49,6 @@ function ModaleLayout({
       </header>
       {children}
     </div >
-  )
-
-  return (
-    <div className={styles.overlay}>
-      {layoutContent}
-    </div>
   )
 }
 

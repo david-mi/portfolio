@@ -41,14 +41,13 @@ function Gallery({ screenshots, name }: Props) {
   return displayGallery
     ? (
       createPortal(
-        < ModaleLayout onCloseButtonClick={() => setDisplayGallery(false)
-        }>
+        <ModaleLayout onCloseButtonClick={() => setDisplayGallery(false)}>
           <Slider {...settings}>
             {screenshots.map((screenshot) => {
               return <GalleryImage key={screenshot.src} screenshot={screenshot} />
             })}
           </Slider>
-        </ModaleLayout >,
+        </ModaleLayout>,
         document.getElementById("projects")!
       )
 
