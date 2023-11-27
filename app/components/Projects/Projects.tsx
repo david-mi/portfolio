@@ -8,7 +8,7 @@ function Projects() {
   return (
     <section className={styles.container}>
       <SectionTitle title="Projets Persos" />
-      <div className={styles.projects}>
+      <div className={styles.projects} id="projects">
         {projectsData.map((project) => {
           return <ProjectCard key={project.id} {...project} />
         })}

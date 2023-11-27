@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { createPortal } from "react-dom";
 import ModaleLayout from "@/app/components/ModaleLayout/ModaleLayout";
 import GalleryButton from "./GalleryButton/GalleryButton";
 import { StaticImageData } from "next/image";
@@ -39,13 +40,18 @@ function Gallery({ screenshots, name }: Props) {
 
   return displayGallery
     ? (
-      <ModaleLayout onCloseButtonClick={() => setDisplayGallery(false)}>
-        <Slider {...settings}>
-          {screenshots.map((screenshot) => {
-            return <GalleryImage key={screenshot.src} screenshot={screenshot} />
-          })}
-        </Slider>
-      </ModaleLayout >
+      createPortal(
+        < ModaleLayout onCloseButtonClick={() => setDisplayGallery(false)
+        }>
+          <Slider {...settings}>
+            {screenshots.map((screenshot) => {
+              return <GalleryImage key={screenshot.src} screenshot={screenshot} />
+            })}
+          </Slider>
+        </ModaleLayout >,
+        document.getElementById("projects")!
+      )
+
     )
     : <GalleryButton name={name} onClick={() => setDisplayGallery(true)} />;
 }

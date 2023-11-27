@@ -12,9 +12,9 @@ function ArrowButton({ onClick, role }: Props) {
   return (
     <button onClick={onClick} className={classNames}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <g fill="none" stroke="currentColor" stroke-width="1.5">
+        <g fill="none" stroke="currentColor" strokeWidth="1.5">
           <circle cx="12" cy="12" r="10"></circle>
-          <path stroke-linecap="round" stroke-linejoin="round" d="m13.5 9l-3 3l3 3"></path>
+          <path strokeLinecap="round" strokeLinejoin="round" d="m13.5 9l-3 3l3 3"></path>
         </g>
       </svg>
     </button>
