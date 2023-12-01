@@ -2,14 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import type { Project } from "../type";
-import Gallery from "./Gallery/Gallery";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./projectCard.module.css";
 import { GithubIcon, LiveIcon } from "@/icons";
 
 function ProjectCard(props: Project) {
-  const { name, description, previewSrc, tags, urls, screenshots } = props
+  const { name, description, previewSrc, tags, urls } = props
   const projectCardRef = useRef<HTMLElement>(null!)
 
   useEffect(() => {
@@ -28,7 +27,6 @@ function ProjectCard(props: Project) {
       <header className={styles.header}>
         <h4 className={styles.title}>{name}</h4>
         <nav className={styles.nav}>
-          <Gallery screenshots={screenshots} name={name} />
           <Link
             className={styles.link}
             href={urls.github}
