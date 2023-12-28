@@ -12,7 +12,6 @@
 body {
   font-family: var(--font-inter);
   padding-inline: clamp(5px, 3.5vw, 4rem);
-  padding-block: 2rem;
 }
 
 h1,
@@ -36,6 +35,14 @@ button {
   cursor: pointer;
   display: flex;
   align-items: center;
+}
+
+main > section,
+footer {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 button:not(.slick-dots button),

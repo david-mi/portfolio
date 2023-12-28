@@ -14,16 +14,12 @@
   position: relative;
   font-weight: 700;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
-  margin-bottom: calc(var(--gap) * 2);
+  margin-block: calc(var(--gap) * 5);
   text-align: center;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media (width < 650px) {
-    margin-bottom: calc(var(--gap) * 1.5);
-  }
 
   &.show span {
     animation: displayTitle 400ms forwards cubic-bezier(.17, .67, .37, 1.14);

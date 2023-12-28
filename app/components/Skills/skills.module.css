@@ -7,9 +7,7 @@
 
     @media (width < 650px) {
       display: flex;
-      margin-inline: auto;
       flex-direction: column;
-      /* max-width: 450px; */
     }
   }
 }

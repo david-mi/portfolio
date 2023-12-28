@@ -1,11 +1,10 @@
 .presentation {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   row-gap: calc(var(--gap) / 2);
   column-gap: calc(var(--gap) * 2);
   justify-content: space-between;
-  align-items: center;
   grid-template-areas:
     "name picture"
     "job  picture";
@@ -15,7 +14,7 @@
     grid-template-areas:
       "name name"
       "job  picture";
-    column-gap: calc(var(--gap));
+    column-gap: var(--gap);
   }
 
   & .name {
@@ -25,6 +24,7 @@
     align-items: flex-start;
     font-weight: 500;
     font-size: clamp(2.5rem, 7vw, 5rem);
+    align-self: flex-end;
 
     @media (width < 650px) {
       font-weight: 600;
@@ -49,6 +49,7 @@
     flex-wrap: wrap;
     justify-content: center;
     font-size: clamp(1.8rem, 4vw, 3rem);
+    align-self: flex-start;
 
     & span:nth-child(1) {
       font-weight: 500;
@@ -73,5 +74,11 @@
     object-fit: cover;
     object-position: 40% 70%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    @media (width < 650px) {
+      align-self: flex-start;
+      width: clamp(var(--min-size), 15vw, var(--max-size));
+      height: clamp(var(--min-size), 15vw, var(--max-size));
+    }
   }
 }
