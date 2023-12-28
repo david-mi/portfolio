@@ -1,39 +1,43 @@
 .presentation {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto 1fr;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: repeat(2, auto);
   row-gap: calc(var(--gap) / 2);
-  column-gap: 2rem;
+  column-gap: calc(var(--gap) * 2);
+  justify-content: space-between;
+  align-items: center;
   grid-template-areas:
     "name picture"
-    "job  picture"
-    "description picture";
+    "job  picture";
 
   @media (width < 650px) {
-    max-width: 450px;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--gap) / 2);
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas:
+      "name name"
+      "job  picture";
+    column-gap: calc(var(--gap));
   }
 
   & .name {
-
-    & span::first-letter {
-      font-size: clamp(3.4rem, 8vw, 7rem);
-      font-weight: 700;
-
-      @media (width < 650px) {
-        font-weight: 600;
-      }
-    }
-
     grid-area: name;
     display: flex;
     gap: calc(var(--gap) / 2);
     align-items: flex-start;
     font-weight: 500;
     font-size: clamp(2.5rem, 7vw, 5rem);
+
+    @media (width < 650px) {
+      font-weight: 600;
+    }
+
+    & span::first-letter {
+      font-size: clamp(3.4rem, 8vw, 7rem);
+      font-weight: 700;
+
+      @media (width < 650px) {
+        font-weight: 700;
+      }
+    }
   }
 
   & .job {
@@ -53,83 +57,21 @@
     & span:nth-child(2) {
       font-weight: 800;
     }
-
-    @media (width < 650px) {
-      flex-direction: column;
-      align-items: end;
-      gap: 0.5rem;
-    }
-  }
-
-  & .description {
-    grid-area: description;
-    background-color: rgba(223, 223, 223, 0.24);
-    padding: 1rem;
-    max-width: 450px;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    --gap-column: 1rem;
-    gap: var(--gap-column);
-
-    & ul {
-      margin-left: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: calc(var(--gap-column) / 2);
-    }
-
-    & li:nth-child(2) {
-      display: flex;
-      flex-direction: column;
-    }
-
-    & a {
-      display: inline-block;
-      position: relative;
-      top: 3px;
-      text-decoration: none;
-      color: white;
-      aspect-ratio: 1/1;
-      height: clamp(30px, 40px - 2vw, 40px);
-      width: clamp(30px, 40px - 2vw, 40px);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-inline: 0.2em;
-    }
-
-    & .svg {
-      position: relative;
-      z-index: 1;
-      height: clamp(20px, 30px - 2vw, 30px);
-      width: clamp(20px, 30px - 2vw, 30px);
-    }
   }
 
   & .picture {
     grid-area: picture;
     align-self: center;
-    max-width: 400px;
-    max-height: 400px;
-    width: 100%;
-    height: 100%;
-    width: clamp(250px, 30vw, 400px);
-    height: clamp(250px, 30vw, 400px);
-    border-radius: 10px;
+    justify-self: flex-end;
+    --max-size: 300px;
+    --min-size: 80px;
+    max-width: var(--max-size);
+    max-height: var(--max-size);
+    width: clamp(var(--min-size), 25vw, var(--max-size));
+    height: clamp(var(--min-size), 25vw, var(--max-size));
+    border-radius: 50%;
     object-fit: cover;
     object-position: 40% 70%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    justify-self: center;
-
-    @media (width < 650px) {
-      max-width: none;
-      max-height: none;
-      width: 100%;
-      height: auto;
-    }
   }
 }
